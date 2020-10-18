@@ -102,9 +102,9 @@ public class CSVReader {
 
                             }
 
-                            FileWriter yearAndLevel = new FileWriter(filePath + "TotalIncome.txt");
-                            yearAndLevel.write(fileContent);
-                            yearAndLevel.close();
+                            FileWriter totalIncome = new FileWriter(filePath + "TotalIncome.txt");
+                            totalIncome.write(fileContent);
+                            totalIncome.close();
                             System.out.println("--- Data saved! ---");
                         }
                         case 5 -> {
@@ -115,12 +115,11 @@ public class CSVReader {
                             while ((line = bufferReader.readLine()) != null) {
                                 String[] values = line.split(",");
                                 fileContent = fileContent.concat("Value: " + values[7] + "\n");
-
                             }
 
-                            FileWriter yearAndLevel = new FileWriter(filePath + "Value.txt");
-                            yearAndLevel.write(fileContent);
-                            yearAndLevel.close();
+                            FileWriter value = new FileWriter(filePath + "Value.txt");
+                            value.write(fileContent);
+                            value.close();
                             System.out.println("--- Data saved! ---");
                         }
                         case 6 -> {
@@ -134,9 +133,9 @@ public class CSVReader {
 
                             }
 
-                            FileWriter yearAndLevel = new FileWriter(filePath + "Units.txt");
-                            yearAndLevel.write(fileContent);
-                            yearAndLevel.close();
+                            FileWriter units = new FileWriter(filePath + "Units.txt");
+                            units.write(fileContent);
+                            units.close();
                             System.out.println("--- Data saved! ---");
                         }
                         case 7 -> System.out.println("GoodBye ");

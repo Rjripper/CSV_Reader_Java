@@ -28,7 +28,9 @@ public class CSVReader {
                 System.out.println("(1 print the Year");
                 System.out.println("(2 print the Level");
                 System.out.println("(3 print both");
-                System.out.println("(4 exit");
+                System.out.println("(4 print total_income");
+                System.out.println("(5 print value");
+                System.out.println("(6 exit");
                 System.out.println("---------------------");
                 System.out.println("\n");
                 System.out.println("Choose:");
@@ -88,11 +90,43 @@ public class CSVReader {
                             System.out.println("--- Data saved! ---");
 
                         }
-                        case 4 -> System.out.println("GoodBye ");
+                        case 4 -> {
+                            System.out.println("Data of the total income ");
+                            System.out.println("--- Data processing! ---");
+                            fileContent = "";
+
+                            while ((line = bufferReader.readLine()) != null) {
+                                String[] values = line.split(",");
+                                fileContent = fileContent.concat("Total Income: " + values[9] + "\n");
+
+                            }
+
+                            FileWriter yearAndLevel = new FileWriter(filePath + "TotalIncome.txt");
+                            yearAndLevel.write(fileContent);
+                            yearAndLevel.close();
+                            System.out.println("--- Data saved! ---");
+                        }
+                        case 5 -> {
+                            System.out.println("Data of the value ");
+                            System.out.println("--- Data processing! ---");
+                            fileContent = "";
+
+                            while ((line = bufferReader.readLine()) != null) {
+                                String[] values = line.split(",");
+                                fileContent = fileContent.concat("Value: " + values[7] + "\n");
+
+                            }
+
+                            FileWriter yearAndLevel = new FileWriter(filePath + "Value.txt");
+                            yearAndLevel.write(fileContent);
+                            yearAndLevel.close();
+                            System.out.println("--- Data saved! ---");
+                        }
+                        case 6 -> System.out.println("GoodBye ");
                         default -> System.out.println("Wrong input, bye..");
                     }
 
-            } while ((choice > 0 && choice < 4));
+            } while ((choice > 0 && choice < 6));
 
         } catch (IOException e) {
             e.printStackTrace();

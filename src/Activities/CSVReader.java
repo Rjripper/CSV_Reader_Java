@@ -30,7 +30,8 @@ public class CSVReader {
                 System.out.println("(3 print both");
                 System.out.println("(4 print total_income");
                 System.out.println("(5 print value");
-                System.out.println("(6 exit");
+                System.out.println("(6 print units");
+                System.out.println("(7 exit");
                 System.out.println("---------------------");
                 System.out.println("\n");
                 System.out.println("Choose:");
@@ -122,11 +123,27 @@ public class CSVReader {
                             yearAndLevel.close();
                             System.out.println("--- Data saved! ---");
                         }
-                        case 6 -> System.out.println("GoodBye ");
+                        case 6 -> {
+                            System.out.println("Data of the units ");
+                            System.out.println("--- Data processing! ---");
+                            fileContent = "";
+
+                            while ((line = bufferReader.readLine()) != null) {
+                                String[] values = line.split(",");
+                                fileContent = fileContent.concat("Units: " + values[3] + "\n");
+
+                            }
+
+                            FileWriter yearAndLevel = new FileWriter(filePath + "Units.txt");
+                            yearAndLevel.write(fileContent);
+                            yearAndLevel.close();
+                            System.out.println("--- Data saved! ---");
+                        }
+                        case 7 -> System.out.println("GoodBye ");
                         default -> System.out.println("Wrong input, bye..");
                     }
 
-            } while ((choice > 0 && choice < 6));
+            } while ((choice > 0 && choice < 7));
 
         } catch (IOException e) {
             e.printStackTrace();

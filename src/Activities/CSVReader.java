@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class CSVReader {
     //own file path
-    public static String filePath = "C:\\Users\\Gebruiker\\Desktop\\Projects\\CSVReader\\src\\resources\\files\\";
+    public static String filePath = "C:\\Users\\meyil\\Documents\\GitHub\\CSV_Reader_Java_Fork\\src\\resources\\files\\";
     public static FileWriter year, yearAndLevel;
 
     public static void main(String[] args) throws IOException {
@@ -20,7 +20,7 @@ public class CSVReader {
 
         try {
 
-            loop: do {
+            do {
                 BufferedReader bufferReader = new BufferedReader(new FileReader(filePath + file));
 
                 System.out.println("\n");

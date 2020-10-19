@@ -40,123 +40,123 @@ public class CSVReader {
                 String fileContent = "";
 
 
-                    switch (choice) {
-                        case 1 -> {
-                            System.out.println("Data of the Year: ");
-                            System.out.println("--- Data processing! ---");
-                            fileContent = "";
+                switch (choice) {
+                    case 1 -> {
+                        System.out.println("Data of the Year: ");
+                        System.out.println("--- Data processing! ---");
+                        fileContent = "";
 
-                            while ((line = bufferReader.readLine()) != null) {
-                                String[] values = line.split(",");
-                                fileContent = fileContent.concat(values[0] + "\n");
-
-                            }
-
-                            FileWriter year = new FileWriter(filePath + "Year.txt");
-                            year.write(fileContent);
-                            year.close();
-                            System.out.println("--- Data saved! ---");
+                        while ((line = bufferReader.readLine()) != null) {
+                            String[] values = line.split(",");
+                            fileContent = fileContent.concat(values[0] + "\n");
 
                         }
-                        case 2 -> {
-                            System.out.println("Data of the Level: ");
-                            System.out.println("--- Data processing! ---");
-                            fileContent = "";
 
-                            while ((line = bufferReader.readLine()) != null) {
-                                String[] values = line.split(",");
-                                fileContent = fileContent.concat(values[1] + "\n");
-                            }
+                        FileWriter year = new FileWriter(filePath + "Year.txt");
+                        year.write(fileContent);
+                        year.close();
+                        System.out.println("--- Data saved! ---");
 
-                            FileWriter level = new FileWriter(filePath + "Level.txt");
-                            level.write(fileContent);
-                            level.close();
-                            System.out.println("--- Data saved! ---");
-
-                        }
-                        case 3 -> {
-                            System.out.println("Data of the Year and Level: ");
-                            System.out.println("--- Data processing! ---");
-                            fileContent = "";
-
-                            while ((line = bufferReader.readLine()) != null) {
-                                String[] values = line.split(",");
-                                fileContent = fileContent.concat("Year: " + values[0] + " " + "Level: " +values[1] + "\n");
-
-                            }
-
-                            FileWriter yearAndLevel = new FileWriter(filePath + "yearAndLevel.txt");
-                            yearAndLevel.write(fileContent);
-                            yearAndLevel.close();
-                            System.out.println("--- Data saved! ---");
-
-                        }
-                        case 4 -> {
-                            System.out.println("Data of the total income ");
-                            System.out.println("--- Data processing! ---");
-                            fileContent = "";
-
-                            while ((line = bufferReader.readLine()) != null) {
-                                String[] values = line.split(",");
-                                fileContent = fileContent.concat("Total Income: " + values[9] + "\n");
-
-                            }
-
-                            FileWriter totalIncome = new FileWriter(filePath + "TotalIncome.txt");
-                            totalIncome.write(fileContent);
-                            totalIncome.close();
-                            System.out.println("--- Data saved! ---");
-                        }
-                        case 5 -> {
-                            System.out.println("Data of the value ");
-                            System.out.println("--- Data processing! ---");
-                            fileContent = "";
-
-                            while ((line = bufferReader.readLine()) != null) {
-                                String[] values = line.split(",");
-                                fileContent = fileContent.concat("Value: " + values[7] + "\n");
-                            }
-
-                            FileWriter value = new FileWriter(filePath + "Value.txt");
-                            value.write(fileContent);
-                            value.close();
-                            System.out.println("--- Data saved! ---");
-                        }
-                        case 6 -> {
-                            System.out.println("Data of the units ");
-                            System.out.println("--- Data processing! ---");
-                            fileContent = "";
-
-                            while ((line = bufferReader.readLine()) != null) {
-                                String[] values = line.split(",");
-                                fileContent = fileContent.concat("Units: " + values[3] + "\n");
-
-                            }
-
-                            FileWriter units = new FileWriter(filePath + "Units.txt");
-                            units.write(fileContent);
-                            units.close();
-                            System.out.println("--- Data saved! ---");
-                        }
-                        case 8 -> {
-                            System.out.println("Data of the units ");
-                            System.out.println("--- Data processing! ---");
-                            fileContent = "";
-
-                            while ((line = bufferReader.readLine()) != null) {
-                                String[] values = line.split(",");
-                                fileContent = fileContent.concat("Position: " + values[6] + "\n");
-
-                            }
-
-                            FileWriter position = new FileWriter(filePath + "Units.txt");
-                            position.write(fileContent);
-                            position.close();
-                            System.out.println("--- Data saved! ---");
-                        }
-                        case 7 -> System.out.println("GoodBye ");
-                        default -> System.out.println("Wrong input, bye..");
                     }
+                    case 2 -> {
+                        System.out.println("Data of the Level: ");
+                        System.out.println("--- Data processing! ---");
+                        fileContent = "";
+
+                        while ((line = bufferReader.readLine()) != null) {
+                            String[] values = line.split(",");
+                            fileContent = fileContent.concat(values[1] + "\n");
+                        }
+
+                        FileWriter level = new FileWriter(filePath + "Level.txt");
+                        level.write(fileContent);
+                        level.close();
+                        System.out.println("--- Data saved! ---");
+
+                    }
+                    case 3 -> {
+                        System.out.println("Data of the Year and Level: ");
+                        System.out.println("--- Data processing! ---");
+                        fileContent = "";
+
+                        while ((line = bufferReader.readLine()) != null) {
+                            String[] values = line.split(",");
+                            fileContent = fileContent.concat("Year: " + values[0] + " " + "Level: " +values[1] + "\n");
+
+                        }
+
+                        FileWriter yearAndLevel = new FileWriter(filePath + "yearAndLevel.txt");
+                        yearAndLevel.write(fileContent);
+                        yearAndLevel.close();
+                        System.out.println("--- Data saved! ---");
+
+                    }
+                    case 4 -> {
+                        System.out.println("Data of the total income ");
+                        System.out.println("--- Data processing! ---");
+                        fileContent = "";
+
+                        while ((line = bufferReader.readLine()) != null) {
+                            String[] values = line.split(",");
+                            fileContent = fileContent.concat("Total Income: " + values[9] + "\n");
+
+                        }
+
+                        FileWriter totalIncome = new FileWriter(filePath + "TotalIncome.txt");
+                        totalIncome.write(fileContent);
+                        totalIncome.close();
+                        System.out.println("--- Data saved! ---");
+                    }
+                    case 5 -> {
+                        System.out.println("Data of the value ");
+                        System.out.println("--- Data processing! ---");
+                        fileContent = "";
+
+                        while ((line = bufferReader.readLine()) != null) {
+                            String[] values = line.split(",");
+                            fileContent = fileContent.concat("Value: " + values[7] + "\n");
+                        }
+
+                        FileWriter value = new FileWriter(filePath + "Value.txt");
+                        value.write(fileContent);
+                        value.close();
+                        System.out.println("--- Data saved! ---");
+                    }
+                    case 6 -> {
+                        System.out.println("Data of the units ");
+                        System.out.println("--- Data processing! ---");
+                        fileContent = "";
+
+                        while ((line = bufferReader.readLine()) != null) {
+                            String[] values = line.split(",");
+                            fileContent = fileContent.concat("Units: " + values[3] + "\n");
+
+                        }
+
+                        FileWriter units = new FileWriter(filePath + "Units.txt");
+                        units.write(fileContent);
+                        units.close();
+                        System.out.println("--- Data saved! ---");
+                    }
+                    case 8 -> {
+                        System.out.println("Data of the units ");
+                        System.out.println("--- Data processing! ---");
+                        fileContent = "";
+
+                        while ((line = bufferReader.readLine()) != null) {
+                            String[] values = line.split(",");
+                            fileContent = fileContent.concat("Position: " + values[6] + "\n");
+
+                        }
+
+                        FileWriter position = new FileWriter(filePath + "Units.txt");
+                        position.write(fileContent);
+                        position.close();
+                        System.out.println("--- Data saved! ---");
+                    }
+                    case 7 -> System.out.println("GoodBye ");
+                    default -> System.out.println("Wrong input, bye..");
+                }
 
             } while ((choice > 0 && choice < 8));
 

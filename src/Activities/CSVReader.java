@@ -154,7 +154,23 @@ public class CSVReader {
                         position.close();
                         System.out.println("--- Data saved! ---");
                     }
-                    case 8 -> System.out.println("GoodBye ");
+                    case 8 -> {
+                        System.out.println("Data of the units is scanning ");
+                        System.out.println("--- Data divisions! ---");
+                        fileContent = "";
+
+                        while ((line = bufferReader.readLine()) != null) {
+                            String[] values = line.split(",");
+                            fileContent = fileContent.concat("divisions: " + values[7] + "\n");
+
+                        }
+
+                        FileWriter position = new FileWriter(filePath + "Units.txt");
+                        position.write(fileContent);
+                        position.close();
+                        System.out.println("--- Data saved! ---");
+                    }
+                    case 9 -> System.out.println("GoodBye ");
                     default -> System.out.println("Wrong input, bye..");
                 }
 

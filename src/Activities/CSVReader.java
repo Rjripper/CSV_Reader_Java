@@ -31,7 +31,9 @@ public class CSVReader {
                 System.out.println("(4 print total_income");
                 System.out.println("(5 print value");
                 System.out.println("(6 print units");
-                System.out.println("(7 exit");
+                System.out.println("(7 print positions");
+                System.out.println("(8 print divisions");
+                System.out.println("(9 exit");
                 System.out.println("---------------------");
                 System.out.println("\n");
                 System.out.println("Choose:");

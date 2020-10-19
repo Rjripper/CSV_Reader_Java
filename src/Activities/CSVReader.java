@@ -138,8 +138,8 @@ public class CSVReader {
                         units.close();
                         System.out.println("--- Data saved! ---");
                     }
-                    case 8 -> {
-                        System.out.println("Data of the units ");
+                    case 7 -> {
+                        System.out.println("Data of the units is scanning ");
                         System.out.println("--- Data processing! ---");
                         fileContent = "";
 
@@ -154,7 +154,7 @@ public class CSVReader {
                         position.close();
                         System.out.println("--- Data saved! ---");
                     }
-                    case 7 -> System.out.println("GoodBye ");
+                    case 8 -> System.out.println("GoodBye ");
                     default -> System.out.println("Wrong input, bye..");
                 }
 

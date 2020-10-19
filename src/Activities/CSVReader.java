@@ -138,11 +138,27 @@ public class CSVReader {
                             units.close();
                             System.out.println("--- Data saved! ---");
                         }
+                        case 8 -> {
+                            System.out.println("Data of the units ");
+                            System.out.println("--- Data processing! ---");
+                            fileContent = "";
+
+                            while ((line = bufferReader.readLine()) != null) {
+                                String[] values = line.split(",");
+                                fileContent = fileContent.concat("Position: " + values[6] + "\n");
+
+                            }
+
+                            FileWriter position = new FileWriter(filePath + "Units.txt");
+                            position.write(fileContent);
+                            position.close();
+                            System.out.println("--- Data saved! ---");
+                        }
                         case 7 -> System.out.println("GoodBye ");
                         default -> System.out.println("Wrong input, bye..");
                     }
 
-            } while ((choice > 0 && choice < 7));
+            } while ((choice > 0 && choice < 8));
 
         } catch (IOException e) {
             e.printStackTrace();
